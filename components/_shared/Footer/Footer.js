@@ -4,9 +4,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <Wrapper className="py-2 container">
-      <div className="d-flex justify-content-lg-between justify-content-sm-center justify-content-md-center flex-wrap align-items-center">
-        <p>© 2022 Roof Technology</p>
-        <div className="d-flex">
+      <div className="d-flex justify-content-lg-between justify-content-sm-between justify-content-md-center align-items-center  w-100 ">
+        <p className="my-2">© 2022 Roof Technology</p>
+        <div className="d-flex my-2">
           <Link href={"/"}>
             <a>
               <div className="d-flex justify-content-center align-items-center social ">
@@ -46,7 +46,7 @@ const Wrapper = styled.footer`
     width:42px;
     height: 42px;
     border-radius: 64px;
-    margin: 0px 16px;
+    margin: 0px 8px;
     transition: 300ms;
   }
   p{

@@ -88,7 +88,7 @@ const PriceEstimator = () => {
                       id="from_location"
                       type="text"
                       className="form-input block py-3 w-full rounded-md"
-                      placeholder="Type keywords..."
+                      placeholder="sending from ..."
                       onKeyPress={onKeypress}
                       name="from"
                     />
