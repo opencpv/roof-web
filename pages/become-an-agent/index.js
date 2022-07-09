@@ -1,5 +1,9 @@
+import NavComponent from "../../components/_shared/Navbar/NavComponent";
+
 const AgentRegistration = () => {
-  return <></>;
+  return <>
+  <NavComponent/>
+  </>;
 };
 
 export default AgentRegistration;

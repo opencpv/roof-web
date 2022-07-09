@@ -12,10 +12,10 @@ const OtherNav = () => {
       <div className="container d-flex justify-content-between align-items-center nav-content">
         <Logo />
         <div className="d-flex align-items-center">
-          <Link href={"#"}>
+          <Link href={"/"}>
             <a className={router.pathname == "/" ? "active" : ""}>Home</a>
           </Link>
-          <Link href={"#"}>
+          <Link href={"/become-an-agent"}>
             <a className="mx-5">
               <RegisterButton text="Become an Agent"/>
             </a>

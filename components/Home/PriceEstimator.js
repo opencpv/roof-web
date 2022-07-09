@@ -6,12 +6,13 @@ import { useLoadScript, Autocomplete } from "@react-google-maps/api";
 
 const scriptOptions = {
   googleMapsApiKey: process.env.NEXT_PUBLIC_API_KEY,
-  libraries: ["places"],
+  libraries: ["places", "distance_matrix"],
 };
 
 const PriceEstimator = () => {
   const { isLoaded, loadError } = useLoadScript(scriptOptions);
   const [autocomplete, setAutocomplete] = useState(null);
+  const [price, setPrice] = useState(0.0);
   const inputEl = useRef(null);
   const desttEl = useRef(null);
 
@@ -25,7 +26,22 @@ const PriceEstimator = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    const from_location = document.getElementById("from_location").value;
+    const to_location = document.getElementById("to_location").value;
+    const geocoder = new google.maps.Geocoder();
+    const service = new google.maps.DistanceMatrixService();
+
+    service.getDistanceMatrix(
+      {
+        origins: [from_location],
+        destinations: [to_location],
+        travelMode: "DRIVING",
+      },
+      (data) => {
+        setPrice(data.rows[0].elements[0].distance.text.split("")[0]);
+        console.log(data);
+      }
+    );
   };
 
   const onLoad = (autocompleteObj) => {
@@ -41,7 +57,9 @@ const PriceEstimator = () => {
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log();
+  }, []);
 
   return (
     <Wrapper className="container">
@@ -67,10 +85,12 @@ const PriceEstimator = () => {
                   >
                     <input
                       ref={inputEl}
+                      id="from_location"
                       type="text"
                       className="form-input block py-3 w-full rounded-md"
                       placeholder="Type keywords..."
                       onKeyPress={onKeypress}
+                      name="from"
                     />
                   </Autocomplete>
                 )}
@@ -88,16 +108,24 @@ const PriceEstimator = () => {
                       className="form-input block py-3 w-full rounded-md"
                       placeholder="destination."
                       onKeyPress={onKeypress}
+                      id="to_location"
                     />
                   </Autocomplete>
                 )}
               </div>
               <div className="col-lg-4 my-3">
-                <button>Check Price</button>
+                <button
+                  type="submit"
+                  onClick={() => {
+                    handleSubmit();
+                  }}
+                >
+                  Check Price
+                </button>
               </div>
             </div>
             <div className="price mt-5 d-flex justify-content-center align-items-center">
-              <p>0.00 GHS</p>
+              <p>{price * 2} GHS</p>
             </div>
           </div>
         </div>
@@ -179,15 +207,6 @@ const Wrapper = styled.section`
 
   .shift-image {
     margin-top: 7em;
-  }
-  .pac-container {
-    background-color: #fff;
-    position: absolute !important;
-    z-index: 1000;
-    border-radius: 16px !important;
-
-    padding-top: 8px;
-    padding-top: 0px;
   }
 
   @media (max-width: 645px) {

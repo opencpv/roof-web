@@ -59,7 +59,7 @@ const RoofBenefits = () => {
           </h1>
 
           <div className="row">
-            <div className="col-lg-4 d-flex justify-content-lg-center justify-content-sm-start my-2">
+            <div className="col-lg-4 d-flex justify-content-center my-2">
               <div className="d-flex align-items-center justify-content-center">
                 <BsBox className="stat-image" />
                 <div className="px-3">
@@ -68,7 +68,7 @@ const RoofBenefits = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 d-flex justify-content-lg-center justify-content-sm-start my-2">
+            <div className="col-lg-4 d-flex justify-content-center my-2">
               <div className="d-flex align-items-center justify-content-center">
                 <BsTruck className="stat-image" />
                 <div className="px-3">
@@ -77,7 +77,7 @@ const RoofBenefits = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 d-flex justify-content-lg-center justify-content-sm-start my-2">
+            <div className="col-lg-4 d-flex justify-content-center my-2">
               <div className="d-flex align-items-center justify-content-center">
                 <BsShop className="stat-image" />
                 <div className="px-4">
