@@ -54,8 +54,12 @@ const RoofBenefits = () => {
       </div>
       <div className="stats-wrapper">
         <div className="container">
+          <h1 className="text-center section-title text-light mb-5 ">
+            Our Current Performance
+          </h1>
+
           <div className="row">
-            <div className="col-lg-4 d-flex justify-content-center">
+            <div className="col-lg-4 d-flex justify-content-lg-center justify-content-sm-start my-2">
               <div className="d-flex align-items-center justify-content-center">
                 <BsBox className="stat-image" />
                 <div className="px-3">
@@ -64,7 +68,7 @@ const RoofBenefits = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 d-flex justify-content-center">
+            <div className="col-lg-4 d-flex justify-content-lg-center justify-content-sm-start my-2">
               <div className="d-flex align-items-center justify-content-center">
                 <BsTruck className="stat-image" />
                 <div className="px-3">
@@ -73,7 +77,7 @@ const RoofBenefits = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 d-flex justify-content-center">
+            <div className="col-lg-4 d-flex justify-content-lg-center justify-content-sm-start my-2">
               <div className="d-flex align-items-center justify-content-center">
                 <BsShop className="stat-image" />
                 <div className="px-4">
@@ -174,7 +178,14 @@ const Wrapper = styled.section`
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    padding: 0.5em 2em ;
+    padding: 0.5em 2em;
     color: black;
+  }
+  @media (max-width: 645px) {
+    .stats-wrapper {
+      width: 100%;
+      background-color: black;
+      padding: 32px 0px;
+    }
   }
 `;

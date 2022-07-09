@@ -10,10 +10,30 @@ const Landing = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            <h1>Fast, affordable and reliable logistics aggregator.</h1>
-            <h2 className="mt-4">Deliver your goods in 3 steps - Request - Send - Confirm</h2>
-            <p>Download the roof app</p>
-            <div className="d-flex position_img">
+            <h1 data-aos="fade-up" data-aos-duration="1500">
+              Fast, affordable and reliable logistics aggregator.
+            </h1>
+            <h2
+              className="mt-4"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="1500"
+            >
+              Deliver your goods in 3 steps - Request - Send - Confirm
+            </h2>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="2500"
+            >
+              Download the roof app
+            </p>
+            <div
+              className="d-flex position_img"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="3000"
+            >
               <div className="position_img">
                 <Link href={"#"}>
                   <a>
