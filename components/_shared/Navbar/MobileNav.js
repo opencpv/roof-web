@@ -49,13 +49,13 @@ const MobileNav = () => {
                     <a>Home</a>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href={"#"}>
                     <a>
                       <RegisterButton />
                     </a>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           )}
