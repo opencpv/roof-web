@@ -7,7 +7,7 @@ body {
   width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -52,24 +52,20 @@ a {
   color: #707070;
 }
 
-.pac-container{
+.pac-container {
   margin-top: 4px;
   border-radius: 16px;
-  width: inherit !important;
-
-  padding:  0px 8px;
- 
+  width: 600px !import;
+  padding: 0px 8px;
+  margin-right: 16px;
 }
 
-.pac-item{
-  font-family: 'Poppins',sans-serif;
-  width: fit-content;
-  width: inherit !important;
-
-
+.pac-item {
+  font-family: "Poppins", sans-serif;
+  width: 600px !import;
 }
 
-.pac-icon{
+.pac-icon {
   visibility: collapse;
   width: 0px;
 }

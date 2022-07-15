@@ -38,7 +38,9 @@ const PriceEstimator = () => {
         travelMode: "DRIVING",
       },
       (data) => {
-        setPrice(data.rows[0].elements[0].distance.text.split("")[0]);
+        setPrice(
+          parseFloat(data.rows[0].elements[0].distance.text.split(" ")[0])
+        );
         console.log(data);
       }
     );
@@ -65,7 +67,7 @@ const PriceEstimator = () => {
     <Wrapper className="container">
       <div className="row">
         <div
-          className="col-lg-6 col-sm-12 "
+          className="col-lg-12 col-sm-12 "
           data-aos="fade-up"
           data-aos-duration="2000"
         >
@@ -125,11 +127,11 @@ const PriceEstimator = () => {
               </div>
             </div>
             <div className="price mt-5 d-flex justify-content-center align-items-center">
-              <p>{price * 2} GHS</p>
+              <p>{price * 2.0} GHS</p>
             </div>
           </div>
         </div>
-        <div className="col-lg-6 col-sm-12">
+        <div className="col-lg-12 col-sm-12 d-flex justify-content-center">
           <div className="shift-image">
             <Image src={Rider} alt="delivery image" />
           </div>
