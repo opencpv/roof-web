@@ -38,9 +38,11 @@ const PriceEstimator = () => {
         travelMode: "DRIVING",
       },
       (data) => {
-        setPrice(
-          parseFloat(data.rows[0].elements[0].distance.text.split(" ")[0])
+        let newPrice = parseFloat(
+          data.rows[0].elements[0].distance.text.split(" ")[0]
         );
+        console.log(newPrice);
+        setPrice(newPrice < 17 ? 17 : newPrice * 2.0);
         console.log(data);
       }
     );
@@ -127,7 +129,7 @@ const PriceEstimator = () => {
               </div>
             </div>
             <div className="price mt-5 d-flex justify-content-center align-items-center">
-              <p>{price * 2.0} GHS</p>
+              <p>{price} GHS</p>
             </div>
           </div>
         </div>
@@ -193,7 +195,7 @@ const Wrapper = styled.section`
 
   .price {
     width: 100%;
-    height: 186px;
+    height: 300px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 900;

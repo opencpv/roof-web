@@ -5,7 +5,7 @@ const NavComponent = () => {
   return (
     <>
       <OtherNav />
-      {/* <MobileNav/> */}
+      <MobileNav />
     </>
   );
 };

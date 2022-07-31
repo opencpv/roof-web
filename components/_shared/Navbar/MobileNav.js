@@ -28,40 +28,43 @@ const MobileNav = () => {
   };
 
   return (
-    <Wrapper>
-      <div className="container d-flex justify-content-between align-items-center nav-content">
-        <Logo />
-        <button className="menu-button" onClick={handleMenuClicked}>
-          <AiOutlineMenu />
-        </button>
-        <Transition in={toggle} timeout={200}>
-          {(state) => (
-            <div
-              className="dropdown"
-              style={{
-                ...defaultStyle,
-                ...transitionStyles[state],
-              }}
-            >
-              <ul>
-                <li>
-                  <Link href={"#"}>
-                    <a>Home</a>
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link href={"#"}>
-                    <a>
-                      <RegisterButton />
-                    </a>
-                  </Link>
-                </li> */}
-              </ul>
-            </div>
-          )}
-        </Transition>
-      </div>
-    </Wrapper>
+    <div className="d-block d-md-none">
+      {" "}
+      <Wrapper>
+        <div className="container d-flex justify-content-between align-items-center nav-content">
+          <Logo />
+          <button className="menu-button" onClick={handleMenuClicked}>
+            <AiOutlineMenu />
+          </button>
+          <Transition in={toggle} timeout={200}>
+            {(state) => (
+              <div
+                className="dropdown"
+                style={{
+                  ...defaultStyle,
+                  ...transitionStyles[state],
+                }}
+              >
+                <ul>
+                  <li>
+                    <Link href={"#"}>
+                      <a>Home</a>
+                    </Link>
+                  </li>
+                  {/* <li>
+             <Link href={"#"}>
+               <a>
+                 <RegisterButton />
+               </a>
+             </Link>
+           </li> */}
+                </ul>
+              </div>
+            )}
+          </Transition>
+        </div>
+      </Wrapper>
+    </div>
   );
 };
 
